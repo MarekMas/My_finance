@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1010</x>
+      <y>540</y>
+      <w>150</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Income : Transaction
+--
+- incomeId : int
+--
++ Income()
+
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1160</x>
+      <y>400</y>
+      <w>100</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Transaction
+--
+- userId : int
+- date : Date
+- item : string
+- amount : float
+--
++Transaction()
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1260</x>
+      <y>540</y>
+      <w>150</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Expense : Transaction
+--
+- expenseId : int
+--
++ Expense()
+
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1250</x>
+      <y>400</y>
+      <w>100</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+group=1</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0;80.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1070</x>
+      <y>400</y>
+      <w>110</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+group=1</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>530</x>
+      <y>60</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Finance
+--
+- userMenager : UserMenager
+- *transationMenager : TransactionMenager
+--
++ Finance()
++ registeration() : void
++ SignIn() : void
++ signOut() : void
++ addIncome() : void
++ addExpence(): void
++ currentMontBalance() : void
++ lastMonthBalance() : void
++ selectScopeOfBalance(): void
++ changePassword() : void
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>450</y>
+      <w>130</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>User
+--
+- userId : int
+- login : string
+- password : string
+- name : string
+- surname : string
+--
++ User()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>330</y>
+      <w>220</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>XmlFile
+--
+FILE_NAME : string
+xmlfile : CMarkup
++addElement() : bool
++loadFromFile() : T element
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>70</x>
+      <y>60</y>
+      <w>310</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>UserMenager
+--
+SignInUserId : int
+- users : vector&lt;User&gt;
+- usersFile : UsersFile
+--
+- giveDataOfTheNewUser(): User
+- getNewUserId() : int
+- isLoginExist() : bool
++ userMenager()
++ registration() : void
++ signIn() : void
++ changePassword(): void
++ signOut() : void
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>880</x>
+      <y>60</y>
+      <w>280</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>TraansactionMenager
+--
+- SIGN_IN_USER_ID : int
+- incomes : vector&lt;Income&gt;
+- expenses : vector&lt;Expense&gt;
+- incomeFile : XmlFile
+- expenseFile: XmlFile
+--
+TransactionMenager()
++ addIncome() : void
++ addExpence(): void
++ currentMontBalance() : void
++ lastMonthBalance() : void
++ selectScopeOfBalance(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>500</x>
+      <y>490</y>
+      <w>320</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>SupportingMethods
+--
+- checkHowManyDaysHaveThisMonth() : int
+- checkIfTheYearIsLeap() : bool
++ convertsIntToString() : string
++ convertsStringToInt() : int
++ loadLine() : string
++ getCurrentDateFromSystem() : string
++ checkIfDataIsCorrect() : bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>860</x>
+      <y>690</y>
+      <w>320</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>Date
+--
+- day : int
+- month : int
+- year : int
+--
+- seperateDay_Month_YearFromDate() : void
++ Date()
++ Date(string)
++ getDateAsString() : string
++ checkIfDateIsCorrect() : bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

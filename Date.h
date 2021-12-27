@@ -10,27 +10,20 @@ class Date
     int month;
     int year;
 
-    void seperateDay_Month_YearFromDate(string date);
     int howManyDaysHaveThisMonth();
     bool checkIfTheYearIsLeapYear();
+    void setCurrentData();
+    bool checkIfDateIsCorrect();
 
 public:
     Date()
     {
-        day = 0;
-        month = 0;
-        year = 0;
-    }
-    Date(string date )
-    {
-        day = 0;
-        month = 0;
-        year = 0;
-        seperateDay_Month_YearFromDate(date);
+        setCurrentData();
     }
 
     string getDateAsString();
-    bool checkIfDateIsCorrect();
+    bool setDateByString(string date);
+
 };
 
 #endif // DATE_H

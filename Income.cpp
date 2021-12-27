@@ -28,14 +28,7 @@ void Income::setincomeID(int newIncomeId)
 }
 bool Income::setDate (string newDate)
 {
-    Date tempotaryDate(newDate);
-    if(tempotaryDate.checkIfDateIsCorrect())
-    {
-        date = tempotaryDate;
-        return true;
-    }
-    else
-        return false;
+
 }
 void Income::setItem(string newItem)
 {

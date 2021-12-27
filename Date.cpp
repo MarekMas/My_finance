@@ -2,37 +2,6 @@
 #include <ctime>
 
 
-void Date::seperateDay_Month_YearFromDate(string date)
-{
-    string temporaryPartOfDate = "";
-    int j = 0;
-    for(int i= 0; i < date.length(); i ++)
-    {
-        if(date[i] >= '0' && date[i] <='9')
-        {
-            temporaryPartOfDate += date[i];
-            j++;
-            if(j== 2)
-            {
-                day = SupportingMethods::convertStringToInt(temporaryPartOfDate);
-                temporaryPartOfDate = "";
-            }
-            else if(j== 4)
-            {
-                month = SupportingMethods::convertStringToInt(temporaryPartOfDate);
-                temporaryPartOfDate = "";
-            }
-            else if(j== 8)
-            {
-                year = SupportingMethods::convertStringToInt(temporaryPartOfDate);
-                temporaryPartOfDate = "";
-            }
-
-
-        }
-    }
-}
-
 string Date::getDateAsString()
 {
     string day = "", month = "", year = "";
@@ -58,7 +27,7 @@ bool Date::checkIfDateIsCorrect()
     tm actualTime;
     time( & temporaryTime );
     actualTime = *localtime( & temporaryTime );
-    int currentYear = actualTime.tm_year + 1900;;
+    int currentYear = actualTime.tm_year + 1900;
     int currentMonth = actualTime.tm_mon + 1;
 
 
@@ -133,3 +102,50 @@ bool Date::checkIfTheYearIsLeapYear()
     return (this->year % 4 == 0 && this->year % 100 != 0) || (this->year% 400 == 0);
 
 }
+
+bool Date::setDateByString(string date)
+{
+    string temporaryPartOfDate = "";
+    this->day = 0;
+    this->month = 0;
+    this->year = 0;
+    int j = 0;
+    for(int i= 0; i < date.length(); i ++)
+    {
+        if(date[i] >= '0' && date[i] <='9')
+        {
+            temporaryPartOfDate += date[i];
+            j++;
+            if(j== 2)
+            {
+                this->day = SupportingMethods::convertStringToInt(temporaryPartOfDate);
+                temporaryPartOfDate = "";
+            }
+            else if(j== 4)
+            {
+                this->month = SupportingMethods::convertStringToInt(temporaryPartOfDate);
+                temporaryPartOfDate = "";
+            }
+            else if(j== 8)
+            {
+                this->year = SupportingMethods::convertStringToInt(temporaryPartOfDate);
+                temporaryPartOfDate = "";
+            }
+
+
+        }
+    }
+    return checkIfDateIsCorrect();
+}
+
+void Date::setCurrentData()
+{
+    time_t temporaryTime;
+    tm actualTime;
+    time( & temporaryTime );
+    actualTime = *localtime( & temporaryTime );
+    this->year = actualTime.tm_year + 1900;
+    this->month = actualTime.tm_mon + 1;
+    this->day = actualTime.tm_mday;
+}
+

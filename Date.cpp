@@ -1,4 +1,5 @@
 #include "Date.h"
+#include <ctime>
 
 
 void Date::seperateDay_Month_YearFromDate(string date)
@@ -60,9 +61,75 @@ bool Date::checkIfDateIsCorrect()
     int currentYear = actualTime.tm_year + 1900;;
     int currentMonth = actualTime.tm_mon + 1;
 
-    if (this->year >= 2000 && this->year =< currentYear)
+
+    if (this->year >= 2000 && this->year < currentYear)
     {
-        this->month >= 1 && this->month =< currentMonth)
+        if(this->month >= 1 && this->month <= 12)
+        {
+            if(this->day >=1 && this->day <= howManyDaysHaveThisMonth())
+                return true;
+        }
     }
-    return true;
+    else if (this->year == currentYear)
+    {
+        if(this->month >= 1 && this->month <= currentMonth)
+        {
+            if(this->day >=1 && this->day <= howManyDaysHaveThisMonth())
+                return true;
+        }
+    }
+    return false;
+}
+
+int Date::howManyDaysHaveThisMonth()
+{
+    switch(month)
+    {
+    case 1: return 31;
+    break;
+
+    case 2: if(checkIfTheYearIsLeapYear())
+               return 29;
+            else
+                return 28;
+    break;
+
+    case 3: return 31;
+    break;
+
+    case 4: return 30;
+    break;
+
+    case 5: return 31;
+    break;
+
+    case 6: return 30;
+    break;
+
+    case 7: return 31;
+    break;
+
+    case 8: return 31;
+    break;
+
+    case 9: return 30;
+    break;
+
+    case 10: return 31;
+    break;
+
+    case 11: return 30;
+    break;
+
+    case 12: return 31;
+
+    default:
+        return 0;
+    }
+}
+
+bool Date::checkIfTheYearIsLeapYear()
+{
+    return (this->year % 4 == 0 && this->year % 100 != 0) || (this->year% 400 == 0);
+
 }

@@ -11,6 +11,8 @@ class Date
     int year;
 
     void seperateDay_Month_YearFromDate(string date);
+    int howManyDaysHaveThisMonth();
+    bool checkIfTheYearIsLeapYear();
 
 public:
     Date()

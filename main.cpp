@@ -6,9 +6,11 @@ using namespace std;
 
 int main()
 {
-    Income income;
-    income.setDate("12.09.2021");
-    cout << income.getDate() << endl;
+    Date date("29.02.2019");
+    if(date.checkIfDateIsCorrect())
+        cout << "Date " << date.getDateAsString() << " is Correct"  << endl;
+    else
+        cout << "Date " << date.getDateAsString() << " is Wrong"  << endl;
 
     return 0;
 }

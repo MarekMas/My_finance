@@ -17,7 +17,7 @@ public:
     string getItem();
     float getAmount();
     void setincomeID(int newIncomeId);
-    bool setDate (string newDate);
+    bool setDate (Date newDate);
     void setItem(string newItem);
     void setAmount(float newAmount);
 

@@ -149,3 +149,42 @@ void Date::setCurrentData()
     this->day = actualTime.tm_mday;
 }
 
+bool Date::operator < (Date & obj)
+    {
+        if (this->year < obj.year)
+            return true;
+        else if(this->year == obj.year)
+        {
+            if(this->month < obj.month)
+                return true;
+            else if(this->month == obj.month)
+            {
+                if(this->day < obj.day)
+                    return true;
+            }
+        }
+        return false;
+    }
+
+ bool Date::operator > (Date & obj)
+ {
+     if (this->year > obj.year)
+        return true;
+    else if(this->year == obj.year)
+    {
+        if(this->month > obj.month)
+            return true;
+        else if(this->month == obj.month)
+        {
+            if(this->day > obj.day)
+                return true;
+        }
+    }
+    return false;
+ }
+
+ bool Date::operator == (Date & obj)
+ {
+     return (this->year == obj.year && this->month == obj.month && this->day == obj.day);
+ }
+

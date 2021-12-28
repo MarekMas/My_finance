@@ -6,15 +6,23 @@ using namespace std;
 
 int main()
 {
+
+
     Date date;
-    if(date.setDateByString("12.02.2012"))
-        cout << "Date " << date.getDateAsString() << " is Correct"  << endl;
+    Date date2;
+    date.setDateByString("12.02.2012");
+    date2.setDateByString("15-02.2012");
+
+    if(date < date2)
+    {
+        cout <<  date.getDateAsString() << " is before " << date2.getDateAsString()  << endl;
+    }
+
     else
-        cout << "Date " << date.getDateAsString() << " is Wrong"  << endl;
+        cout <<  date.getDateAsString() << " is after " << date2.getDateAsString()  << endl;
 
-    Date date2 = date;
 
-    cout << "Look at this " << date.getDateAsString()  << endl;
+
 
 
     return 0;

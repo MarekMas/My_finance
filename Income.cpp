@@ -26,9 +26,9 @@ void Income::setincomeID(int newIncomeId)
     if (newIncomeId >0)
        incomeId = newIncomeId;
 }
-bool Income::setDate (string newDate)
+bool Income::setDate (Date newDate)
 {
-
+    date = newDate;
 }
 void Income::setItem(string newItem)
 {

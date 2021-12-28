@@ -218,10 +218,10 @@ TransactionMenager()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>800</x>
+      <x>860</x>
       <y>660</y>
       <w>360</w>
-      <h>210</h>
+      <h>260</h>
     </coordinates>
     <panel_attributes>Date
 --
@@ -234,6 +234,9 @@ TransactionMenager()
 - setCurrentData() : void
 - checkIfDateIsCorrect() : bool
 + Date()
++ operator &lt; () : bool
++ operator &gt; () : bool
++ operator == () : bool
 + getDateAsString() : string
 + setDateByString() : bool
 </panel_attributes>

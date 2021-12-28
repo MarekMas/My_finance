@@ -20,9 +20,9 @@ public:
     {
         setCurrentData();
     }
-    bool operator < (Date & obj);
-    bool operator > (Date & obj);
-    bool operator == (Date & obj);
+    bool operator < (Date &obj);
+    bool operator > (Date &obj);
+    bool operator == (Date &obj);
 
     string getDateAsString();
     bool setDateByString(string date);

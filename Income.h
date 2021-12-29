@@ -16,10 +16,10 @@ public:
     string getDate();
     string getItem();
     float getAmount();
-    void setincomeID(int newIncomeId);
-    bool setDate (Date newDate);
+    void setincomeID(string IncomeId);
+    void setDate (string newDate);
     void setItem(string newItem);
-    void setAmount(float newAmount);
+    void setAmount(string newAmount);
 
 
 };

@@ -17,6 +17,15 @@ int SupportingMethods::convertStringToInt(string number)
     return numberInt;
 }
 
+float SupportingMethods::convertStringToFloat(string number)
+{
+    float numberFloat;
+    istringstream ss(number);
+    ss >> numberFloat;
+
+    return numberFloat;
+
+}
 
 string SupportingMethods::wczytajLinie()
 {

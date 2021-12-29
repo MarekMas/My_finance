@@ -8,7 +8,7 @@
 class XmlFile
 {
     const string FILE_NAME;
-    CMarkup xmlFile;
+    CMarkup xml;
 
 
     public:

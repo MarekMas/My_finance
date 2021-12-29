@@ -10,7 +10,7 @@ using namespace std;
 class TransactionMenager
 {
     const int SIGNED_IN_USER_ID;
-    vector<Income> incomes;
+    CMarkup xmlIncomes;
     XmlFile xmlFile;
 
     public:

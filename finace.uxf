@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1010</x>
-      <y>480</y>
+      <x>1000</x>
+      <y>430</y>
       <w>150</w>
       <h>100</h>
     </coordinates>
@@ -21,8 +21,8 @@ group=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1160</x>
-      <y>340</y>
+      <x>1150</x>
+      <y>290</y>
       <w>100</w>
       <h>120</h>
     </coordinates>
@@ -40,8 +40,8 @@ group=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1260</x>
-      <y>480</y>
+      <x>1250</x>
+      <y>430</y>
       <w>150</w>
       <h>100</h>
     </coordinates>
@@ -57,8 +57,8 @@ group=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1250</x>
-      <y>340</y>
+      <x>1240</x>
+      <y>290</y>
       <w>100</w>
       <h>160</h>
     </coordinates>
@@ -69,8 +69,8 @@ group=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1070</x>
-      <y>340</y>
+      <x>1060</x>
+      <y>290</y>
       <w>110</w>
       <h>160</h>
     </coordinates>
@@ -182,7 +182,7 @@ SignInUserId : int
     </coordinates>
     <panel_attributes>TraansactionMenager
 --
-- SIGN_IN_USER_ID : int
+- SIGNED_IN_USER_ID : int
 - incomes : vector&lt;Income&gt;
 - expenses : vector&lt;Expense&gt;
 - incomeFile : XmlFile

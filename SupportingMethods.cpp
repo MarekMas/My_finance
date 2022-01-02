@@ -17,6 +17,23 @@ int SupportingMethods::convertStringToInt(string number)
     return numberInt;
 }
 
+float SupportingMethods::convertStringToFloat(string number)
+{
+    float numberFloat;
+    istringstream ss(number);
+    ss >> numberFloat;
+
+    return numberFloat;
+
+}
+
+string SupportingMethods::convertFloatToString(float number)
+{
+    ostringstream ss;
+    ss << number;
+    string str = ss.str();
+    return str;
+}
 
 string SupportingMethods::wczytajLinie()
 {
@@ -82,3 +99,4 @@ int SupportingMethods::wczytajLiczbeCalkowita()
     }
     return liczba;
 }
+

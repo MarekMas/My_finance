@@ -6,11 +6,15 @@ int Income::getincomeId()
     return incomeId;
 }
 
-string Income::getDate()
+string Income::getDateByString()
 {
     return date.getDateAsString();
 }
 
+Date Income::getDate()
+{
+    return date;
+}
 string Income::getItem()
 {
     return item;
@@ -21,22 +25,27 @@ float Income::getAmount()
     return amount;
 }
 
-void Income::setincomeID(int newIncomeId)
+void Income::setincomeID(string newIncomeId)
 {
-    if (newIncomeId >0)
-       incomeId = newIncomeId;
+    int incomeId = SupportingMethods::convertStringToInt(newIncomeId);
+    if(incomeId >0)
+       this->incomeId = incomeId;
 }
-bool Income::setDate (Date newDate)
+void Income::setDate (string newDate)
 {
-    date = newDate;
+    Date date;
+    if(date.setDateByString(newDate))
+        this->date = date;
+
 }
 void Income::setItem(string newItem)
 {
     item = newItem;
 }
 
-void Income::setAmount(float newAmount)
+void Income::setAmount(string newAmount)
 {
-    if(newAmount > 0)
-        amount = newAmount;
+    float amount = SupportingMethods::convertStringToFloat(newAmount);
+    if(amount > 0)
+        this->amount = amount;
 }

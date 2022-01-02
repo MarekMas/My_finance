@@ -10,16 +10,24 @@ class Income
     string item;
     float amount;
 public:
-    Income(){};
+    Income(){}
+    Income(int incomeId, Date date, string item, float amount)
+    {
+        this->incomeId = incomeId;
+        this->date = date;
+        this->item = item;
+        this->amount = amount;
+    }
 
     int getincomeId();
-    string getDate();
+    Date getDate();
+    string getDateByString();
     string getItem();
     float getAmount();
-    void setincomeID(int newIncomeId);
-    bool setDate (Date newDate);
+    void setincomeID(string IncomeId);
+    void setDate (string newDate);
     void setItem(string newItem);
-    void setAmount(float newAmount);
+    void setAmount(string newAmount);
 
 
 };

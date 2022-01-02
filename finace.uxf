@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1000</x>
+      <x>1190</x>
       <y>430</y>
       <w>150</w>
       <h>100</h>
@@ -21,14 +21,13 @@ group=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1150</x>
+      <x>1340</x>
       <y>290</y>
-      <w>100</w>
+      <w>110</w>
       <h>120</h>
     </coordinates>
     <panel_attributes>Transaction
 --
-- userId : int
 - date : Date
 - item : string
 - amount : float
@@ -40,7 +39,7 @@ group=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1250</x>
+      <x>1440</x>
       <y>430</y>
       <w>150</w>
       <h>100</h>
@@ -57,19 +56,19 @@ group=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1240</x>
+      <x>1440</x>
       <y>290</y>
-      <w>100</w>
+      <w>90</w>
       <h>160</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 group=1</panel_attributes>
-    <additional_attributes>10.0;10.0;80.0;10.0;80.0;140.0</additional_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0;70.0;140.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1060</x>
+      <x>1250</x>
       <y>290</y>
       <w>110</w>
       <h>160</h>
@@ -110,7 +109,7 @@ group=1</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>390</y>
+      <y>490</y>
       <w>130</w>
       <h>140</h>
     </coordinates>
@@ -128,21 +127,24 @@ group=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>640</x>
-      <y>270</y>
+      <x>590</x>
+      <y>370</y>
       <w>220</w>
       <h>120</h>
     </coordinates>
     <panel_attributes>XmlFile
 --
 FILE_NAME : string
-xmlfile : CMarkup
-+addElement() : bool
-+loadFromFile() : T element
+SIGNED_IN_USER_ID : string
+xml : CMarkup
+--
+XmlFile()
+int findMaxId()
 
 
 
-</panel_attributes>
+
+group=2</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -157,7 +159,7 @@ xmlfile : CMarkup
 --
 SignInUserId : int
 - users : vector&lt;User&gt;
-- usersFile : UsersFile
+- xmlUser : XmlUser
 --
 - giveDataOfTheNewUser(): User
 - getNewUserId() : int
@@ -175,7 +177,7 @@ SignInUserId : int
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>880</x>
+      <x>1030</x>
       <y>0</y>
       <w>280</w>
       <h>250</h>
@@ -183,10 +185,11 @@ SignInUserId : int
     <panel_attributes>TraansactionMenager
 --
 - SIGNED_IN_USER_ID : int
+- maxIncomeId : int
 - incomes : vector&lt;Income&gt;
 - expenses : vector&lt;Expense&gt;
-- incomeFile : XmlFile
-- expenseFile: XmlFile
+- incomeFile : XmlIncomes
+- expenseFile: XmlExpenses
 --
 TransactionMenager()
 + addIncome() : void
@@ -199,27 +202,25 @@ TransactionMenager()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>480</x>
-      <y>470</y>
+      <x>580</x>
+      <y>770</y>
       <w>320</w>
       <h>140</h>
     </coordinates>
     <panel_attributes>SupportingMethods
 --
-- checkHowManyDaysHaveThisMonth() : int
-- checkIfTheYearIsLeap() : bool
 + convertsIntToString() : string
 + convertsStringToInt() : int
-+ loadLine() : string
-+ getCurrentDateFromSystem() : string
-+ checkIfDataIsCorrect() : bool</panel_attributes>
++ convertStringToFloat() : float
++ convertFloatToString() : string 
++ loadLine() : string</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>860</x>
-      <y>660</y>
+      <x>1210</x>
+      <y>680</y>
       <w>360</w>
       <h>260</h>
     </coordinates>
@@ -241,5 +242,298 @@ TransactionMenager()
 + setDateByString() : bool
 </panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>890</x>
+      <y>530</y>
+      <w>270</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>XmlIncomes
+--
+addIncome() : void 
+loadIncomesFromFile() : vector&lt;Income&gt;
+
+
+group=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>550</x>
+      <y>530</y>
+      <w>290</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>XmlExpenses
+--
+addExpense() : void 
+loadEcpensesFromFile() : vector&lt;Expense&gt;
+
+group=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>240</x>
+      <y>530</y>
+      <w>260</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>XmlUsers
+--
+addUser() : void 
+loadUsersFromFile() : vector&lt;User&gt;
+group=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>370</x>
+      <y>370</y>
+      <w>240</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+group=2</panel_attributes>
+    <additional_attributes>220.0;10.0;10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>800</x>
+      <y>370</y>
+      <w>240</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+group=2</panel_attributes>
+    <additional_attributes>10.0;10.0;220.0;10.0;220.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>480</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+group=2</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>730</x>
+      <y>0</y>
+      <w>320</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;300.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>370</x>
+      <y>0</y>
+      <w>180</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>160.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1210</x>
+      <y>240</y>
+      <w>30</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1300</x>
+      <y>190</y>
+      <w>270</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;250.0;10.0;250.0;240.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>90</x>
+      <y>340</y>
+      <w>30</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>270</x>
+      <y>340</y>
+      <w>30</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>820</x>
+      <y>170</y>
+      <w>230</w>
+      <h>380</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>210.0;10.0;10.0;10.0;10.0;360.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1080</x>
+      <y>240</y>
+      <w>30</w>
+      <h>310</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;290.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1380</x>
+      <y>400</y>
+      <w>30</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;280.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1160</x>
+      <y>240</y>
+      <w>70</w>
+      <h>470</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;20.0;450.0;50.0;450.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>890</x>
+      <y>770</y>
+      <w>340</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>320.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>340</y>
+      <w>390</w>
+      <h>460</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;440.0;370.0;440.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>470</x>
+      <y>630</y>
+      <w>160</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0;140.0;100.0;140.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>670</x>
+      <y>630</y>
+      <w>30</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>850</x>
+      <y>230</y>
+      <w>200</w>
+      <h>560</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>180.0;10.0;10.0;10.0;10.0;540.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>890</x>
+      <y>630</y>
+      <w>30</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>120</x>
+      <y>570</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1150</x>
+      <y>520</y>
+      <w>150</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;80.0;130.0;80.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>780</x>
+      <y>520</y>
+      <w>750</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;150.0;730.0;150.0;730.0;10.0</additional_attributes>
   </element>
 </diagram>

@@ -6,11 +6,15 @@ int Income::getincomeId()
     return incomeId;
 }
 
-string Income::getDate()
+string Income::getDateByString()
 {
     return date.getDateAsString();
 }
 
+Date Income::getDate()
+{
+    return date;
+}
 string Income::getItem()
 {
     return item;

@@ -27,6 +27,14 @@ float SupportingMethods::convertStringToFloat(string number)
 
 }
 
+string SupportingMethods::convertFloatToString(float number)
+{
+    ostringstream ss;
+    ss << number;
+    string str = ss.str();
+    return str;
+}
+
 string SupportingMethods::wczytajLinie()
 {
     string wejscie = "";
@@ -91,3 +99,4 @@ int SupportingMethods::wczytajLiczbeCalkowita()
     }
     return liczba;
 }
+

@@ -1,6 +1,6 @@
 <map version="1.0.1">
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
-<node CREATED="1639341986673" ID="ID_904348208" MODIFIED="1639518584459" STYLE="bubble" TEXT="Main menu">
+<node CREATED="1639341986673" ID="ID_904348208" MODIFIED="1640814922058" STYLE="bubble" TEXT="Main menu">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -48,7 +48,8 @@
       </li>
     </ol>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <node CREATED="1639341986673" ID="ID_155036046" MODIFIED="1639429129960" POSITION="right" TEXT="Registeration">
 <node CREATED="1639342016014" ID="ID_1910690446" MODIFIED="1639343795154" TEXT="Enter your Login">
 <node CREATED="1639342103131" ID="ID_518286848" MODIFIED="1639428792327" TEXT="Check if the login is unique">

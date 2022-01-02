@@ -8,15 +8,18 @@
 class XmlFile
 {
     const string FILE_NAME;
+    const string SIGNED_IN_USER_ID;
     CMarkup xml;
 
-
     public:
-        XmlFile(string fileName)
-        : FILE_NAME(fileName){}
-        bool addIncome(Income income);
-        vector<Income> loadIncomesFromFile(int signedInUserId);
+        XmlFile(string fileName, int signedInUserID )
+        : FILE_NAME(fileName), SIGNED_IN_USER_ID(SupportingMethods::convrtIntToString(signedInUserID))
+        {
+        }
 
+        void addIncome(Income income);
+        vector<Income> loadIncomesFromFile();
+        int findMaxIncomeId();
 };
 
 #endif // XMLFILE_H

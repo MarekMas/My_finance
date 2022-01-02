@@ -10,14 +10,16 @@ using namespace std;
 class TransactionMenager
 {
     const int SIGNED_IN_USER_ID;
-    CMarkup xmlIncomes;
+    int maxIncomeId;
+    vector<Income> incomes;
     XmlFile xmlFile;
 
     public:
         TransactionMenager(int signedInUserId, string nameOfIncomeFile)
-        : SIGNED_IN_USER_ID(signedInUserId), xmlFile(nameOfIncomeFile)
+        : SIGNED_IN_USER_ID(signedInUserId), xmlFile(nameOfIncomeFile,signedInUserId)
         {
-
+            incomes = xmlFile.loadIncomesFromFile();
+            maxIncomeId = xmlFile.findMaxIncomeId();
         }
 };
 

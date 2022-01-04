@@ -2,11 +2,11 @@
 #include "Income.h"
 #include "Date.h"
 #include "XmlFile.h"
-//#include "TransactionMenager.h"
+#include "TransactionMenager.h"
 
 using namespace std;
 
-int main() //Porównywanie dat
+int main1() //Porównywanie dat
 {
     Date date1;
     Date date2;
@@ -38,5 +38,21 @@ int main3()
         cout << "Data prawidlowa" << endl;
     else
         cout << "Data nieprawidlowa" << endl;
+    return 0;
+}
+
+int main()
+{
+    Date date;
+    vector<Income> incomes;
+    Income income1(1,date,"loan",200.10);
+    Income income2(2,date,"salary",465.49);
+    incomes.push_back(income1);
+    incomes.push_back(income2);
+    cout << incomes[0].getDateByString() << endl;
+    cout << incomes[0].getItem() << endl;
+    cout << incomes[1].getIncomeId() << endl;
+    cout << incomes[1].getAmount() << endl;
+
     return 0;
 }

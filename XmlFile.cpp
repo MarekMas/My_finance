@@ -28,7 +28,7 @@ void XmlFile::addIncome(Income income)
     xml.IntoElem();
     xml.AddElem( "Income" );
     xml.IntoElem();
-    xml.AddElem( "incomeId" , income.getincomeId());
+    xml.AddElem( "incomeId" , income.getIncomeId());
     xml.AddElem( "userId" , SIGNED_IN_USER_ID);
     xml.AddElem( "date", income.getDateByString());
     xml.AddElem( "item", income.getItem());

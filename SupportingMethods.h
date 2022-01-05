@@ -15,7 +15,7 @@ public:
     float static convertStringToFloat(string number);
     string static convertFloatToString(float number);
     string static wczytajLinie();
-    string static zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
+    string static changeTheFirstLetterToUppercaseAndTheRestToLowercase(string text);
     string static pobierzLiczbe(string tekst, int pozycjaZnaku);
     char static wczytajZnak();
     int static wczytajLiczbeCalkowita();

@@ -4,22 +4,21 @@
 #include <vector>
 #include "Markup.h"
 #include "Income.h"
+#include "Expense.h"
 
 class XmlFile
 {
+    protected:
     const string FILE_NAME;
-    const string SIGNED_IN_USER_ID;
     CMarkup xml;
 
     public:
-        XmlFile(string fileName, int signedInUserID )
-        : FILE_NAME(fileName), SIGNED_IN_USER_ID(SupportingMethods::convrtIntToString(signedInUserID))
+        XmlFile(string fileName)
+        : FILE_NAME(fileName)
         {
         }
+        int findMaxId(string attribute);
 
-        void addIncome(Income income);
-        vector<Income> loadIncomesFromFile();
-        int findMaxIncomeId();
 };
 
 #endif // XMLFILE_H

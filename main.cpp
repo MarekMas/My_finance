@@ -20,7 +20,7 @@ int main1() //Porównywanie dat
 int main2()
 {   //Wczytywanie z pliku xml i dodawanie do pliku
     Date date;
-    XmlFile xmlFile("income.xml", 1);
+    XmlIncomes xmlFile("income.xml", 1);
     vector<Income> incomes = xmlFile.loadIncomesFromFile();
     Income income1(1,date,"loan",200.10);
     xmlFile.addIncome(income1);

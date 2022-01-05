@@ -2,7 +2,7 @@
 #define TRANSACTIONMENAGER_H
 
 #include "Income.h"
-#include "XmlFile.h"
+#include "XmlIncomes.h"
 
 using namespace std;
 
@@ -12,14 +12,14 @@ class TransactionMenager
     const int SIGNED_IN_USER_ID;
     int maxIncomeId;
     vector<Income> incomes;
-    XmlFile xmlFile;
+    XmlIncomes xmlIncomes;
 
     public:
         TransactionMenager(int signedInUserId, string nameOfIncomeFile)
-        : SIGNED_IN_USER_ID(signedInUserId), xmlFile(nameOfIncomeFile,signedInUserId)
+        : SIGNED_IN_USER_ID(signedInUserId), xmlIncomes(nameOfIncomeFile,signedInUserId)
         {
-            incomes = xmlFile.loadIncomesFromFile();
-            maxIncomeId = xmlFile.findMaxIncomeId();
+            incomes = xmlIncomes.loadIncomesFromFile();
+            maxIncomeId = xmlIncomes.findMaxId("income");
         }
 };
 

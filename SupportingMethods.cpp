@@ -43,14 +43,14 @@ string SupportingMethods::wczytajLinie()
 }
 
 
-string SupportingMethods::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst)
+string SupportingMethods::changeTheFirstLetterToUppercaseAndTheRestToLowercase(string text)
 {
-    if (!tekst.empty())
+    if (!text.empty())
     {
-        transform(tekst.begin(), tekst.end(), tekst.begin(), ::tolower);
-        tekst[0] = toupper(tekst[0]);
+        transform(text.begin(), text.end(), text.begin(), ::tolower);
+        text[0] = toupper(text[0]);
     }
-    return tekst;
+    return text;
 }
 
 string SupportingMethods::pobierzLiczbe(string tekst, int pozycjaZnaku)

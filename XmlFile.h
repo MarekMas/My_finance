@@ -5,6 +5,7 @@
 #include "Markup.h"
 #include "Income.h"
 #include "Expense.h"
+#include "User.h"
 
 class XmlFile
 {

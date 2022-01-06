@@ -8,9 +8,11 @@ class XmlUsers : public XmlFile
 {
     public:
 
-        XmlUsers();
-        void addUser(Income income);
+        XmlUsers(string fileName)
+        : XmlFile(fileName){}
+        void addUser(User user);
         vector<User> loadUsersFromFile();
+        void overwriteUserData(User user);
 };
 
 #endif // XMLUSERS_H

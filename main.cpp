@@ -3,6 +3,7 @@
 #include "Date.h"
 #include "XmlFile.h"
 #include "TransactionMenager.h"
+#include "MyFinance.h"
 
 using namespace std;
 
@@ -41,7 +42,7 @@ int main3()
     return 0;
 }
 
-int main()
+int main4()
 {
     Date date;
     vector<Income> incomes;
@@ -54,5 +55,31 @@ int main()
     cout << incomes[1].getIncomeId() << endl;
     cout << incomes[1].getAmount() << endl;
 
+    return 0;
+}
+
+int main()
+{
+    MyFinance myFinanse("users.xml");
+
+    while (true)
+    {
+        switch (myFinanse.selectOptionsFromTheMainMenu())
+        {
+        case '1':
+            myFinanse.registeration();
+            break;
+        case '2':
+            myFinanse.signIn();
+            break;
+        case '9':
+            exit(0);
+            break;
+        default:
+            cout << endl << "Nie ma takiej opcji w menu." << endl << endl;
+            system("pause");
+            break;
+        }
+    }
     return 0;
 }

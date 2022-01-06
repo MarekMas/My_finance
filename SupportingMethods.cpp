@@ -35,7 +35,7 @@ string SupportingMethods::convertFloatToString(float number)
     return str;
 }
 
-string SupportingMethods::wczytajLinie()
+string SupportingMethods::loadLine()
 {
     string wejscie = "";
     getline(cin, wejscie);
@@ -64,23 +64,23 @@ string SupportingMethods::pobierzLiczbe(string tekst, int pozycjaZnaku)
     return liczba;
 }
 
-char SupportingMethods::wczytajZnak()
+char SupportingMethods::loadCharacter()
 {
-    string wejscie = "";
-    char znak  = {0};
+    string outcome = "";
+    char character  = {0};
 
     while (true)
     {
-        getline(cin, wejscie);
+        getline(cin, outcome);
 
-        if (wejscie.length() == 1)
+        if (outcome.length() == 1)
         {
-            znak = wejscie[0];
+            character = outcome[0];
             break;
         }
         cout << "To nie jest pojedynczy znak. Wpisz ponownie." << endl;
     }
-    return znak;
+    return character;
 }
 
 int SupportingMethods::wczytajLiczbeCalkowita()

@@ -14,6 +14,7 @@ class User
     string surname;
 
     public:
+        User(){}
         User(int userId, string login, string password, string name, string surname)
         {
             this->userId = userId;

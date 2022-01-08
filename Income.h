@@ -17,6 +17,7 @@ public:
     }
 
     int getIncomeId();
-    void setincomeID(string IncomeId);
+    void setIncomeId(string newIncomeId);
+    void setIncomeId(int IncomeId);
 };
 #endif // INCOME_H

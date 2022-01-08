@@ -26,6 +26,12 @@ void Transaction::setDate (string newDate)
         this->date = date;
 
 }
+
+void Transaction::setDate(Date date)
+{
+    this->date = date;
+}
+
 void Transaction::setItem(string newItem)
 {
     item = newItem;
@@ -34,6 +40,12 @@ void Transaction::setItem(string newItem)
 void Transaction::setAmount(string newAmount)
 {
     float amount = SupportingMethods::convertStringToFloat(newAmount);
+    if(amount > 0)
+        this->amount = amount;
+}
+
+void Transaction::setAmount(float amount)
+{
     if(amount > 0)
         this->amount = amount;
 }

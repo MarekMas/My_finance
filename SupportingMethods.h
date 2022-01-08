@@ -19,6 +19,7 @@ public:
     string static pobierzLiczbe(string tekst, int pozycjaZnaku);
     char static loadCharacter();
     int static wczytajLiczbeCalkowita();
+    float static loadFloatValue();
 
 };
 #endif // SUPPORTINGMETHODS_h

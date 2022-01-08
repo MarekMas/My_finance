@@ -33,7 +33,7 @@ vector<Income> XmlIncomes::loadIncomesFromFile()
             if(SIGNED_IN_USER_ID == xml.GetData())
             {
                 xml.FindElem("incomeId");
-                income.setincomeID(xml.GetData());
+                income.setIncomeId(xml.GetData());
                 xml.FindElem("date");
                 income.setDate(xml.GetData());
                 xml.FindElem("item");

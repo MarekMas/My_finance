@@ -23,8 +23,10 @@ class Transaction
     string getItem();
     float getAmount();
     void setDate (string newDate);
+    void setDate (Date date);
     void setItem(string newItem);
     void setAmount(string newAmount);
+    void setAmount(float amount);
 };
 
 #endif // TRANSACTION_H

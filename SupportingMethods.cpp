@@ -100,3 +100,23 @@ int SupportingMethods::wczytajLiczbeCalkowita()
     return liczba;
 }
 
+float SupportingMethods::loadFloatValue()
+{
+    string outcome = "";
+    float number = 0;
+
+    while (true)
+    {
+        getline(cin, outcome);
+        for(int i = 0; i < outcome.length(); i++)
+        {
+            if(outcome[i] == ',')
+                outcome[i] = '.';
+        }
+        stringstream myStream(outcome);
+        if (myStream >> number)
+            break;
+        cout << "To nie jest liczba. Wpisz ponownie. " << endl;
+    }
+    return number;
+}

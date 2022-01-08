@@ -116,19 +116,19 @@ bool Date::setDateByString(string date)
         {
             temporaryPartOfDate += date[i];
             j++;
-            if(j== 2)
+            if(j== 4)
             {
-                this->day = SupportingMethods::convertStringToInt(temporaryPartOfDate);
+                this->year = SupportingMethods::convertStringToInt(temporaryPartOfDate);
                 temporaryPartOfDate = "";
             }
-            else if(j== 4)
+            else if(j== 6)
             {
                 this->month = SupportingMethods::convertStringToInt(temporaryPartOfDate);
                 temporaryPartOfDate = "";
             }
             else if(j== 8)
             {
-                this->year = SupportingMethods::convertStringToInt(temporaryPartOfDate);
+                this->day = SupportingMethods::convertStringToInt(temporaryPartOfDate);
                 temporaryPartOfDate = "";
             }
 

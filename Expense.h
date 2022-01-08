@@ -16,7 +16,8 @@ class Expense : public Transaction
     }
 
     int getExpenseId();
-    void setExpenseId(string expenseId);
+    void setExpenseId(string newExpenseId);
+    void setExpenseId(int expenseId);
 };
 
 #endif // EXPENSE_H

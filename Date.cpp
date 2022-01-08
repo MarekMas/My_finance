@@ -18,7 +18,7 @@ string Date::getDateAsString()
 
     year = SupportingMethods::convrtIntToString(this->year);
 
-    return day + "-" + month + "-" + year;
+    return year + "-" + month + "-" + day;
 }
 
 bool Date::checkIfDateIsCorrect()

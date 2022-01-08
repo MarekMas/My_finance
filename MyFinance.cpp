@@ -29,7 +29,7 @@ void MyFinance::addIncome()
 
 void MyFinance::addExpence()
 {
-
+    transactionMenager->addExpense();
 }
 
 void MyFinance::currentMontBalance()

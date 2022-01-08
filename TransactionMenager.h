@@ -21,6 +21,7 @@ class TransactionMenager
 
     Date selectDate();
     string selectIncomeItem();
+    string selectExpenseItem();
     float setValueOfAmount();
 
 
@@ -35,6 +36,7 @@ class TransactionMenager
         }
 
         void addIncome();
+        void addExpense();
 };
 
 #endif // TRANSACTIONMENAGER_H

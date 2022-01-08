@@ -12,3 +12,9 @@ void Expense::setExpenseId(string newExpenseId)
     if(expenseId > 0)
        this->expenseId = expenseId;
 }
+
+void Expense::setExpenseId(int expenseId)
+{
+    if(expenseId > 0)
+       this->expenseId = expenseId;
+}

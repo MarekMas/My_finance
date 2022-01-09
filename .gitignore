@@ -1,3 +1,5 @@
+*.cscope_file_list
+*.xml
 *.cbp
 *.depend
 *.layout

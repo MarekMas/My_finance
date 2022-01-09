@@ -14,11 +14,12 @@ public:
     int static convertStringToInt(string number);
     float static convertStringToFloat(string number);
     string static convertFloatToString(float number);
-    string static wczytajLinie();
-    string static zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
+    string static loadLine();
+    string static changeTheFirstLetterToUppercaseAndTheRestToLowercase(string text);
     string static pobierzLiczbe(string tekst, int pozycjaZnaku);
-    char static wczytajZnak();
+    char static loadCharacter();
     int static wczytajLiczbeCalkowita();
+    float static loadFloatValue();
 
 };
 #endif // SUPPORTINGMETHODS_h

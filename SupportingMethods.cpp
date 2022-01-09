@@ -35,7 +35,7 @@ string SupportingMethods::convertFloatToString(float number)
     return str;
 }
 
-string SupportingMethods::wczytajLinie()
+string SupportingMethods::loadLine()
 {
     string wejscie = "";
     getline(cin, wejscie);
@@ -43,14 +43,14 @@ string SupportingMethods::wczytajLinie()
 }
 
 
-string SupportingMethods::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst)
+string SupportingMethods::changeTheFirstLetterToUppercaseAndTheRestToLowercase(string text)
 {
-    if (!tekst.empty())
+    if (!text.empty())
     {
-        transform(tekst.begin(), tekst.end(), tekst.begin(), ::tolower);
-        tekst[0] = toupper(tekst[0]);
+        transform(text.begin(), text.end(), text.begin(), ::tolower);
+        text[0] = toupper(text[0]);
     }
-    return tekst;
+    return text;
 }
 
 string SupportingMethods::pobierzLiczbe(string tekst, int pozycjaZnaku)
@@ -64,23 +64,23 @@ string SupportingMethods::pobierzLiczbe(string tekst, int pozycjaZnaku)
     return liczba;
 }
 
-char SupportingMethods::wczytajZnak()
+char SupportingMethods::loadCharacter()
 {
-    string wejscie = "";
-    char znak  = {0};
+    string outcome = "";
+    char character  = {0};
 
     while (true)
     {
-        getline(cin, wejscie);
+        getline(cin, outcome);
 
-        if (wejscie.length() == 1)
+        if (outcome.length() == 1)
         {
-            znak = wejscie[0];
+            character = outcome[0];
             break;
         }
         cout << "To nie jest pojedynczy znak. Wpisz ponownie." << endl;
     }
-    return znak;
+    return character;
 }
 
 int SupportingMethods::wczytajLiczbeCalkowita()
@@ -100,3 +100,23 @@ int SupportingMethods::wczytajLiczbeCalkowita()
     return liczba;
 }
 
+float SupportingMethods::loadFloatValue()
+{
+    string outcome = "";
+    float number = 0;
+
+    while (true)
+    {
+        getline(cin, outcome);
+        for(int i = 0; i < outcome.length(); i++)
+        {
+            if(outcome[i] == ',')
+                outcome[i] = '.';
+        }
+        stringstream myStream(outcome);
+        if (myStream >> number)
+            break;
+        cout << "To nie jest liczba. Wpisz ponownie. " << endl;
+    }
+    return number;
+}

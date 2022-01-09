@@ -27,6 +27,12 @@ class Transaction
     void setItem(string newItem);
     void setAmount(string newAmount);
     void setAmount(float amount);
+
+    bool operator < (  Transaction& str)
+    {
+        Date date2 = str.getDate();
+        return (date < str.date);
+    }
 };
 
 #endif // TRANSACTION_H

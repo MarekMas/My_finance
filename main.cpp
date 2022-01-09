@@ -2,6 +2,7 @@
 #include "Income.h"
 #include "Date.h"
 #include "XmlFile.h"
+#include "XmlUsers.h"
 #include "TransactionMenager.h"
 #include "MyFinance.h"
 
@@ -58,7 +59,7 @@ int main4()
     return 0;
 }
 
-int main()
+int main5()
 {
     MyFinance myFinanse("users.xml","incomes.xml","expenses.xml");
 
@@ -117,4 +118,50 @@ int main()
         }
     }
     return 0;
+}
+
+int main6()
+{
+    vector<Income> transactions;
+    Date date;
+
+    date.setDateByString("2022-01-05");
+    Income tran1(1,date,"Zakupy", 200.21);
+    transactions.push_back(tran1);
+
+    date.setDateByString("2021-12-18");
+    Income tran2(2,date,"Rata", 600.23);
+    transactions.push_back(tran2);
+
+    date.setDateByString("2020-05-12");
+    Income tran3(3,date,"Alko", 999.99);
+    transactions.push_back(tran3);
+
+    date.setDateByString("2021-13-18");
+    Income tran4(4,date,"Faja", 16.50);
+    transactions.push_back(tran4);
+
+    for(int i = 0; i < transactions.size(); i ++)
+    {
+        cout << transactions[i].getDateByString() << " "  << transactions[i].getItem() << " " << transactions[i].getAmount() << endl;
+    }
+
+    sort(transactions.begin(), transactions.end());
+
+    for(int i = 0; i < transactions.size(); i ++)
+    {
+        cout << transactions[i].getDateByString() << " "  << transactions[i].getItem() << " " << transactions[i].getAmount() << endl;
+    }
+
+
+}
+
+int main()
+{
+    XmlUsers xmlUsers("users.xml");
+    vector<User> users = xmlUsers.loadUsersFromFile();
+    users[0].setLogin("Mako");
+    xmlUsers.overwriteUserData(users[0]);
+
+
 }

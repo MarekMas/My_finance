@@ -21,6 +21,11 @@ string Date::getDateAsString()
     return year + "-" + month + "-" + day;
 }
 
+int Date::getMonth()
+{
+    return this->month;
+}
+
 bool Date::checkIfDateIsCorrect()
 {
     time_t temporaryTime;
@@ -138,7 +143,7 @@ bool Date::setDateByString(string date)
     return checkIfDateIsCorrect();
 }
 
-void Date::setCurrentData()
+void Date::setCurrentDate()
 {
     time_t temporaryTime;
     tm actualTime;
@@ -147,6 +152,26 @@ void Date::setCurrentData()
     this->year = actualTime.tm_year + 1900;
     this->month = actualTime.tm_mon + 1;
     this->day = actualTime.tm_mday;
+}
+
+void Date::setDay(int day)
+{
+    this->day = day;
+}
+
+void Date::setMonth(int month)
+{
+    while(month <= 0)
+    {
+        month += 12;
+        this->year--;
+    }
+    this->month = month;
+}
+
+void Date::setLastDayOfMonth()
+{
+    this->day = howManyDaysHaveThisMonth();
 }
 
 bool Date::operator < (Date &obj)

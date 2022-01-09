@@ -34,17 +34,17 @@ void MyFinance::addExpence()
 
 void MyFinance::currentMontBalance()
 {
-
+    transactionMenager->currentMontBalance();
 }
 
 void MyFinance::lastMonthBalance()
 {
-
+    transactionMenager->lastMonthBalance();
 }
 
 void MyFinance::selectScopeOfBalance()
 {
-
+    transactionMenager->selectScopeOfBalance();
 }
 
 

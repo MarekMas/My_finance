@@ -13,6 +13,7 @@ void TransactionMenager::addIncome()
     income.setAmount(setValueOfAmount());
 
     incomes.push_back(income);
+    sort(incomes.begin(), incomes.end());
     xmlIncomes.addIncome(income);
     cout << "Dodano nowy przychod" << endl;
     system("pause");
@@ -32,6 +33,7 @@ void TransactionMenager::addExpense()
     expense.setAmount(setValueOfAmount());
 
     expenses.push_back(expense);
+    sort(incomes.begin(), incomes.end());
     xmlExpenses.addExpense(expense);
     cout << "Dodano nowy wydatek" << endl;
     system("pause");
@@ -54,6 +56,7 @@ Date TransactionMenager::selectDate()
         switch(choice)
         {
             case '1':
+                date.setCurrentDate();
                 return date;
             break;
             case '2':
@@ -181,6 +184,96 @@ float TransactionMenager::setValueOfAmount()
     return amount;
 }
 
+void TransactionMenager::currentMontBalance()
+{
+    system("cls");
+    cout << "--BILANS BIEZACEGO MIESIACA--" << endl;
+    Date minDate;
+    minDate.setCurrentDate();
+    minDate.setDay(1);
+    Date maxDate;
+    maxDate.setCurrentDate();
+    maxDate.setLastDayOfMonth();
+
+    showBalanceByRange(maxDate,minDate);
+}
+
+void TransactionMenager::lastMonthBalance()
+{
+    system("cls");
+    cout << "--BILANS OSTATNIEGO MIESIACA--" << endl;
+    Date minDate;
+    minDate.setCurrentDate();
+    minDate.setMonth(minDate.getMonth()-1);
+    minDate.setDay(1);
+
+    Date maxDate;
+    maxDate.setCurrentDate();
+    maxDate.setMonth(maxDate.getMonth()-1);
+    maxDate.setLastDayOfMonth();
+
+    showBalanceByRange(maxDate,minDate);
+}
+
+void TransactionMenager::selectScopeOfBalance()
+{
+    system("cls");
+    cout << "--BILANS DLA WSKAZANEGO ZAKRESU--" << endl;
+    Date minDate;
+    cout << "Podaj poczatek zakresu (yyyy-mm-dd): ";
+    while(minDate.setDateByString(SupportingMethods::loadLine()) == false)
+    {
+        cout << "Data niepoprawna"<< endl;
+        cout << "Podaj poczatek zakresu ponownie (yyyy-mm-dd): ";
+    }
+
+    Date maxDate;
+
+    cout << "Podaj koniec zakresu (yyyy-mm-dd): ";
+    while(maxDate.setDateByString(SupportingMethods::loadLine()) == false)
+    {
+        cout << "Data niepoprawna"<< endl;
+        cout << "Podaj koniec zakresu ponownie (yyyy-mm-dd): ";
+    }
 
 
+    showBalanceByRange(maxDate,minDate);
+}
+
+void TransactionMenager::showBalanceByRange(Date maxDate, Date minDate)
+{
+    cout << "MIN " << minDate.getDateAsString() << " MAX " << maxDate.getDateAsString() << endl << endl;
+    float sumOfIncomes = 0;
+    float sumOfExpenses = 0;
+    cout << "-Przychody-" << endl;
+    Date transactionDate;
+    for(int i = 0; i < incomes.size(); i ++)
+    {
+         transactionDate = incomes[i].getDate();
+        if((minDate < transactionDate || minDate == transactionDate) && (maxDate > transactionDate || maxDate == transactionDate))
+        {
+            cout << "Data: " << incomes[i].getDateByString() << " Rodzaj: " << incomes[i].getItem() << " Wartosc: " << incomes[i].getAmount() << endl;
+            sumOfIncomes += incomes[i].getAmount();
+        }
+    }
+
+    cout << "-Wydatki-" << endl;
+
+    for(int i = 0; i < expenses.size(); i ++)
+    {
+        transactionDate = expenses[i].getDate();
+        if((minDate < transactionDate || minDate == transactionDate) && (maxDate > transactionDate || maxDate == transactionDate))
+        {
+            cout << "Data: " << expenses[i].getDateByString() << " Rodzaj: " << expenses[i].getItem() << " Wartosc: " << expenses[i].getAmount() << endl;
+            sumOfExpenses += expenses[i].getAmount();
+        }
+    }
+    cout << "-Suma przychodów-" << endl;
+    cout << sumOfIncomes << endl;
+    cout << "-Suma wydatkow-" << endl;
+    cout << sumOfExpenses << endl;
+    cout << "Bilans (przychody - wydatki): " << endl;
+    cout << sumOfIncomes - sumOfExpenses << endl;
+    system("pause");
+}
 

@@ -54,6 +54,7 @@ vector<User> XmlUsers::loadUsersFromFile()
 
 void XmlUsers::overwriteUserData(User user)
 {
+    int i = 0;
     xml.ResetPos();
     xml.FindElem();
     xml.IntoElem();
@@ -79,5 +80,7 @@ void XmlUsers::overwriteUserData(User user)
             xml.RemoveElem();
             xml.AddElem("surname", user.getSurname());
         }
+        xml.OutOfElem();
     }
+    xml.Save(FILE_NAME);
 }

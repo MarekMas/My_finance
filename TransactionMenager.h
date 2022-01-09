@@ -23,6 +23,7 @@ class TransactionMenager
     string selectIncomeItem();
     string selectExpenseItem();
     float setValueOfAmount();
+    void showBalanceByRange(Date maxDate, Date minDate);
 
 
     public:
@@ -30,13 +31,20 @@ class TransactionMenager
         : SIGNED_IN_USER_ID(signedInUserId), xmlIncomes(nameOfIncomeFile,signedInUserId), xmlExpenses(nameOfExpenseFile, signedInUserId)
         {
             incomes = xmlIncomes.loadIncomesFromFile();
+            sort(incomes.begin(), incomes.end());
             maxIncomeId = xmlIncomes.findMaxId("income");
+
             expenses = xmlExpenses.loadExpensesFromFile();
+            sort(expenses.begin(), expenses.end());
             maxExpenseId = xmlExpenses.findMaxId("expense");
+
         }
 
         void addIncome();
         void addExpense();
+        void currentMontBalance();
+        void lastMonthBalance();
+        void selectScopeOfBalance();
 };
 
 #endif // TRANSACTIONMENAGER_H

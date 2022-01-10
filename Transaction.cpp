@@ -49,3 +49,9 @@ void Transaction::setAmount(float amount)
     if(amount > 0)
         this->amount = amount;
 }
+
+bool Transaction::operator < (Transaction& str)
+    {
+        Date date2 = str.getDate();
+        return (date < str.date);
+    }

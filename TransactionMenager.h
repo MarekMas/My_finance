@@ -5,6 +5,7 @@
 #include "XmlIncomes.h"
 #include "Expense.h"
 #include "XmlExpenses.h"
+#include <iomanip>
 
 using namespace std;
 

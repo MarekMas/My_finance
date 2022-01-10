@@ -242,38 +242,39 @@ void TransactionMenager::selectScopeOfBalance()
 
 void TransactionMenager::showBalanceByRange(Date maxDate, Date minDate)
 {
-    cout << "MIN " << minDate.getDateAsString() << " MAX " << maxDate.getDateAsString() << endl << endl;
     float sumOfIncomes = 0;
     float sumOfExpenses = 0;
-    cout << "-Przychody-" << endl;
+    cout << fixed << setprecision(2);
+    cout << endl << "-Przychody-" << endl;
     Date transactionDate;
     for(int i = 0; i < incomes.size(); i ++)
     {
          transactionDate = incomes[i].getDate();
         if((minDate < transactionDate || minDate == transactionDate) && (maxDate > transactionDate || maxDate == transactionDate))
         {
-            cout << "Data: " << incomes[i].getDateByString() << " Rodzaj: " << incomes[i].getItem() << " Wartosc: " << incomes[i].getAmount() << endl;
+            cout << "Data: " << setw(15) << left << incomes[i].getDateByString() << "Rodzaj: " << setw(25) << incomes[i].getItem();
+            cout << "Wartosc: " << setw(10) << right << incomes[i].getAmount() << endl;
             sumOfIncomes += incomes[i].getAmount();
         }
     }
 
-    cout << "-Wydatki-" << endl;
+    cout << endl << "-Wydatki-" << endl;
 
     for(int i = 0; i < expenses.size(); i ++)
     {
         transactionDate = expenses[i].getDate();
         if((minDate < transactionDate || minDate == transactionDate) && (maxDate > transactionDate || maxDate == transactionDate))
         {
-            cout << "Data: " << expenses[i].getDateByString() << " Rodzaj: " << expenses[i].getItem() << " Wartosc: " << expenses[i].getAmount() << endl;
+            cout << "Data: " << setw(15) << left << expenses[i].getDateByString() << "Rodzaj: " << setw(25) << expenses[i].getItem() <<"Wartosc: " << setw(10) << right << expenses[i].getAmount()  << endl;
             sumOfExpenses += expenses[i].getAmount();
         }
     }
-    cout << "-Suma przychodów-" << endl;
+    cout << endl<< "-Suma przychodow-" << endl;
     cout << sumOfIncomes << endl;
-    cout << "-Suma wydatkow-" << endl;
+    cout << endl << "-Suma wydatkow-" << endl;
     cout << sumOfExpenses << endl;
-    cout << "Bilans (przychody - wydatki): " << endl;
-    cout << sumOfIncomes - sumOfExpenses << endl;
+    cout << endl << "Bilans (przychody - wydatki): " << endl;
+    cout << sumOfIncomes - sumOfExpenses << endl << endl;
     system("pause");
 }
 

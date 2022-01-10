@@ -53,17 +53,6 @@ string SupportingMethods::changeTheFirstLetterToUppercaseAndTheRestToLowercase(s
     return text;
 }
 
-string SupportingMethods::pobierzLiczbe(string tekst, int pozycjaZnaku)
-{
-    string liczba = "";
-    while(isdigit(tekst[pozycjaZnaku]) == true)
-    {
-        liczba += tekst[pozycjaZnaku];
-        pozycjaZnaku ++;
-    }
-    return liczba;
-}
-
 char SupportingMethods::loadCharacter()
 {
     string outcome = "";
@@ -81,23 +70,6 @@ char SupportingMethods::loadCharacter()
         cout << "To nie jest pojedynczy znak. Wpisz ponownie." << endl;
     }
     return character;
-}
-
-int SupportingMethods::wczytajLiczbeCalkowita()
-{
-    string wejscie = "";
-    int liczba = 0;
-
-    while (true)
-    {
-        getline(cin, wejscie);
-
-        stringstream myStream(wejscie);
-        if (myStream >> liczba)
-            break;
-        cout << "To nie jest liczba. Wpisz ponownie. " << endl;
-    }
-    return liczba;
 }
 
 float SupportingMethods::loadFloatValue()

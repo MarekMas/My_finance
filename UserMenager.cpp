@@ -2,10 +2,6 @@
 
 void UserMenager::registration()
 {
-    for(int i = 0; i < users.size(); i++)
-    {
-        cout << users[i].getUserId() << " " << users[i].getLogin() << " " << users[i].getPassword() << " " << users[i].getName() << " " << users[i].getSurname() << endl;
-    }
     User user = giveDataOfTheNewUser();
 
     users.push_back(user);

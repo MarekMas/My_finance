@@ -31,10 +31,7 @@ public:
     void setDay(int day);
     void setMonth(int month);
     void setLastDayOfMonth();
-
     void setCurrentDate();
-
-
 };
 
 #endif // DATE_H

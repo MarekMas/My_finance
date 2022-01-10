@@ -16,9 +16,7 @@ public:
     string static convertFloatToString(float number);
     string static loadLine();
     string static changeTheFirstLetterToUppercaseAndTheRestToLowercase(string text);
-    string static pobierzLiczbe(string tekst, int pozycjaZnaku);
     char static loadCharacter();
-    int static wczytajLiczbeCalkowita();
     float static loadFloatValue();
 
 };
